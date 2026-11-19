@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPL 2026 Ticket Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0b132b;
+      color: #ffffff;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #1c2541;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    h1 {
+      text-align: center;
+      color: #ff9f1c;
+    }
+    .nav-link {
+      display: inline-block;
+      margin-bottom: 15px;
+      color: #5bc0be;
+      text-decoration: none;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #3a506b;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+    .inline-options label {
+      display: inline-block;
+      font-weight: normal;
+      margin-right: 15px;
+    }
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    button {
+      flex: 1;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button[type="submit"] {
+      background-color: #ff9f1c;
+      color: #0b132b;
+    }
+    button[type="reset"] {
+      background-color: #3a506b;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="nav-link">&larr; Back to Home</a>
+    <h1>IPL 2026 Ticket Booking</h1>
+
+    <form action="#" method="post">
+      <!-- Full Name -->
+      <div class="form-group">
+        <label for="fullName">Full Name *</label>
+        <input
+          type="text"
+          id="fullName"
+          name="fullName"
+          placeholder="Enter your full name"
+          minlength="3"
+          maxlength="50"
+          required
+        />
+      </div>
+
+      <!-- Email Address -->
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="example@email.com"
+          required
+        />
+      </div>
+
+      <!-- Phone Number -->
+      <div class="form-group">
+        <label for="phone">Phone Number (10 digits) *</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="9876543210"
+          minlength="10"
+          maxlength="10"
+          pattern="[0-9]{10}"
+          title="Please enter a valid 10-digit mobile number"
+          required
+        />
+      </div>
+
+      <!-- Match Selection Dropdown -->
+      <div class="form-group">
+        <label for="match">Select Match *</label>
+        <select id="match" name="match" required>
+          <option value="">-- Choose an IPL Match --</option>
+          <option value="RCB vs CSK">Match 1: RCB vs CSK (M. Chinnaswamy Stadium)</option>
+          <option value="MI vs KKR">Match 2: MI vs KKR (Wankhede Stadium)</option>
+          <option value="SRH vs RR">Match 3: SRH vs RR (Rajiv Gandhi Intl. Stadium)</option>
+          <option value="GT vs LSG">Match 4: GT vs LSG (Narendra Modi Stadium)</option>
+        </select>
+      </div>
+
+      <!-- Stand Category Dropdown -->
+      <div class="form-group">
+        <label for="stand">Stand Category *</label>
+        <select id="stand" name="stand" required>
+          <option value="">-- Choose Stand Category --</option>
+          <option value="General">General Stand - ₹1,500</option>
+          <option value="Premium">Premium East/West Stand - ₹3,500</option>
+          <option value="Corporate">Corporate Box - ₹8,000</option>
+          <option value="VIP">VIP Hospitality Lounge - ₹15,000</option>
+        </select>
+      </div>
+
+      <!-- Number of Tickets -->
+      <div class="form-group">
+        <label for="tickets">Number of Tickets (1 to 6) *</label>
+        <input
+          type="number"
+          id="tickets"
+          name="tickets"
+          min="1"
+          max="6"
+          placeholder="Enter quantity (1-6)"
+          required
+        />
+      </div>
+
+      <!-- Radio Buttons: Ticket Delivery Mode -->
+      <div class="form-group inline-options">
+        <label>Ticket Delivery Preference *</label>
+        <label><input type="radio" name="delivery" value="e-ticket" required /> M-Ticket (QR Code)</label>
+        <label><input type="radio" name="delivery" value="physical" /> Box Office Pickup</label>
+      </div>
+
+      <!-- Checkboxes: Additional Add-ons & Terms -->
+      <div class="form-group inline-options">
+        <label>Additional Preferences</label>
+        <label><input type="checkbox" name="addons" value="jersey" /> Official Team Jersey (+₹999)</label>
+        <label><input type="checkbox" name="addons" value="snacks" /> Stadium Snack Combo (+₹450)</label>
+      </div>
+
+      <div class="form-group inline-options">
+        <label>
+          <input type="checkbox" name="terms" required /> I agree to the stadium entry rules and booking terms *
+        </label>
+      </div>
+
+      <!-- Submit and Reset Buttons -->
+      <div class="button-group">
+        <button type="submit">Book Tickets</button>
+        <button type="reset">Reset Form</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
