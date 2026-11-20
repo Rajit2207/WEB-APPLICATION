@@ -62,6 +62,7 @@
                     <th>Date</th>
                     <th>Time</th>
                     <th>Venue</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -70,36 +71,42 @@
                     <td>JULY 22, 2026</td>
                     <td>6:30 PM</td>
                     <td>Wankhede Stadium, Mumbai</td>
+                    <td><button type="button" class="schedule-book-btn" data-match="RCB vs CSK">Book</button></td>
                 </tr>
                 <tr>
                     <td>CSK vs KKR</td>
                     <td>JULY 24, 2026</td>
                     <td>2:30 PM</td>
                     <td>M. A. Chidambaram Stadium, Chennai</td>
+                    <td><button type="button" class="schedule-book-btn" data-match="CSK vs KKR">Book</button></td>
                 </tr>
                 <tr>
                     <td>MI vs SRH</td>
                     <td>JULY 26, 2026</td>
                     <td>8:30 PM</td>
                     <td>Arun Jaitley Stadium, Delhi</td>
+                    <td><button type="button" class="schedule-book-btn" data-match="MI vs SRH">Book</button></td>
                 </tr>
                 <tr>
                     <td>RCB vs PBKS</td>
                     <td>JULY 28, 2026</td>
                     <td>7:30 PM</td>
                     <td>Sawai Mansingh Stadium, Jaipur</td>
+                    <td><button type="button" class="schedule-book-btn" data-match="RCB vs PBKS">Book</button></td>
                 </tr>
                 <tr>
                     <td>SRH vs RCB</td>
                     <td>JULY 30, 2026</td>
                     <td>4:30 PM</td>
                     <td>Rajiv Gandhi International Stadium, Hyderabad</td>
+                    <td><button type="button" class="schedule-book-btn" data-match="SRH vs RCB">Book</button></td>
                 </tr>
                 <tr>
                     <td>RCB vs KKR</td>
                     <td>AUGUST 2, 2026</td>
                     <td>1:30 PM</td>
                     <td>Eden Gardens, Kolkata</td>
+                    <td><button type="button" class="schedule-book-btn" data-match="RCB vs KKR">Book</button></td>
                 </tr>
             </tbody>
         </table>
@@ -108,15 +115,15 @@
     <section id="booking">
         <h2>Book Your Tickets</h2>
 
-        <form>
+        <form id="homeBookingForm">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" minlength="3" maxlength="50" required>
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="example@email.com" required>
 
             <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit number" required>
+            <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit number" minlength="10" maxlength="10" pattern="[0-9]{10}" title="Enter a valid 10-digit phone number" required>
 
             <label for="ticket">Number of Tickets:</label>
             <select id="ticket" name="ticket"> 
@@ -180,17 +187,6 @@
     <p>&copy; 2026 IPL Ticket Booking. All Rights Reserved.</p>
 </footer>
 
-<script>
-function showMatch() {
-    const matchSelect = document.getElementById('match');
-    const display = document.getElementById('matchDetails');
-    if (matchSelect.value) {
-        display.textContent = 'Selected: ' + matchSelect.value;
-    } else {
-        display.textContent = 'Please choose a match first.';
-    }
-}
-</script>
-
+<script src="app.js"></script>
 </body>
 </html>
